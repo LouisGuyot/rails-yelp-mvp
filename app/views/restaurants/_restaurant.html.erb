@@ -1,0 +1,29 @@
+
+<div id="<%= dom_id restaurant %>">
+  <p>
+    <strong>Name:</strong>
+    <%= restaurant.name %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= restaurant.address %>
+  </p>
+
+  <p>
+    <strong>Phone number:</strong>
+    <%= restaurant.phone_number %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= restaurant.category %>
+  </p>
+
+
+  <%= link_to 'New review', new_restaurant_review_path(restaurant) %>
+
+  <%= restaurant.reviews.each do |review| %>
+  <li><%= review.content %> <%= review.rating %></li>
+  <% end  %>
+</div>
